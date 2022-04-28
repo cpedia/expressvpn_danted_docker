@@ -12,6 +12,8 @@ ENV LIGHTWAY_CIPHER auto
 
 ARG APP=expressvpn_3.21.0.2-1_amd64.deb
 
+RUN DEBIAN_FRONTEND=noninteractive apt-get -yq install apt-utils
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libterm-readkey-perl ca-certificates wget expect iproute2 curl procps libnm0 \
     && rm -rf /var/lib/apt/lists/* \
