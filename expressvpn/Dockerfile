@@ -10,7 +10,7 @@ ENV LOCATION smart
 ENV PREFERRED_PROTOCOL auto
 ENV LIGHTWAY_CIPHER auto
 
-ARG APP=expressvpn_3.18.1.0-1_amd64.deb
+ARG APP=expressvpn_3.21.0.2-1_amd64.deb
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libterm-readkey-perl ca-certificates wget expect iproute2 curl procps libnm0 \
@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && wget -q "https://www.expressvpn.works/clients/linux/${APP}" -O /tmp/${APP} \
     && dpkg -i /tmp/${APP} \
     && rm -rf /tmp/*.deb \
+    && wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O /tmp/install.sh --port=1080 \
+    && rm -rf /tmp/install.sh \
     && apt-get purge -y --auto-remove wget
 
 COPY entrypoint.sh /tmp/entrypoint.sh

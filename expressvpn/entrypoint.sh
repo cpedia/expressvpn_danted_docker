@@ -10,4 +10,5 @@ expressvpn preferences set auto_connect true
 expressvpn preferences set preferred_protocol $PREFERRED_PROTOCOL
 expressvpn preferences set lightway_cipher $LIGHTWAY_CIPHER
 expressvpn connect $SERVER
+systemctl start danted
 exec "$@"
