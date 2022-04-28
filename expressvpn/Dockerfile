@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # && wget -q "https://github.com/cpedia/expressvpn_danted_docker/raw/master/expressvpn/Dockerfile/${APP}" -O /tmp/${APP} \
     && dpkg -i /tmp/${APP} \
     && rm -rf /tmp/*.deb \
-    && wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O /tmp/install.sh --port=1080 \
+    && wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O /tmp/install.sh  \
     && rm -rf /tmp/install.sh \
     && apt-get purge -y --auto-remove wget
 
