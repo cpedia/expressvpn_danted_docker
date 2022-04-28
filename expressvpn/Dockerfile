@@ -48,7 +48,7 @@ ENV CONFIG_SUB "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=
 #RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    linux-pam apache2-utils build-base linux-pam-dev && \
+    pam && \
     mkdir -p ${DANTE_TEMP} && cd ${DANTE_TEMP} && \
     wget ${DANTE_URL} -O ${DANTE_FILE} && \
     tar xzf ${DANTE_FILE} --strip 1 && \
