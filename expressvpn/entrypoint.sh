@@ -10,6 +10,4 @@ expressvpn preferences set auto_connect true
 expressvpn preferences set preferred_protocol $PREFERRED_PROTOCOL
 expressvpn preferences set lightway_cipher $LIGHTWAY_CIPHER
 expressvpn connect $SERVER
-bash install_danted.sh --port=1080
-systemctl start danted
 exec "$@"
