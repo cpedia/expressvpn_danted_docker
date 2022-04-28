@@ -18,8 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     # && wget -q "https://github.com/cpedia/expressvpn_danted_docker/raw/master/expressvpn/Dockerfile/${APP}" -O /tmp/${APP} \
     && dpkg -i /tmp/${APP} \
-    && rm -rf /tmp/*.deb \
-    && apt-get purge -y --auto-remove wget
+    && rm -rf /tmp/*.deb
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 COPY expressvpnActivate.sh /tmp/expressvpnActivate.sh
@@ -60,7 +59,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     make && make install && \
     echo "auth required pam_pwdfile.so pwdfile ${DANTE_PASSWD}" > ${LIBPAM_DANTE} && \
     echo "account required pam_permit.so" >> ${LIBPAM_DANTE} && \
-    rm -rf ${DANTE_TEMP}
+    rm -rf ${DANTE_TEMP} \
+    && apt-get purge -y --auto-remove wget
 
 ADD conf "${DANTE_DIR}/conf"
 ADD script "${DANTE_DIR}/script"
