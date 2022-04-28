@@ -60,7 +60,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     make && make install && \
     echo "auth required pam_pwdfile.so pwdfile ${DANTE_PASSWD}" > ${LIBPAM_DANTE} && \
     echo "account required pam_permit.so" >> ${LIBPAM_DANTE} && \
-    rm -rf ${DANTE_TEMP} && apk del --purge build-base linux-pam-dev
+    rm -rf ${DANTE_TEMP}
 
 ADD conf "${DANTE_DIR}/conf"
 ADD script "${DANTE_DIR}/script"
