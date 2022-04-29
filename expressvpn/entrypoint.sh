@@ -11,8 +11,8 @@ expressvpn preferences set preferred_protocol $PREFERRED_PROTOCOL
 expressvpn preferences set lightway_cipher $LIGHTWAY_CIPHER
 expressvpn connect $SERVER
 
-chmod +x /etc/init.d/danted
-update-rc.d danted defaults
+# chmod +x /etc/init.d/danted
+# update-rc.d danted defaults
 service danted restart
 
 exec "$@"

@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 COPY expressvpnActivate.sh /tmp/expressvpnActivate.sh
-COPY danted_init /etc/init.d/danted
+# COPY danted_init /etc/init.d/danted
 COPY danted.conf /etc/danted.conf
 
 ENTRYPOINT ["/bin/bash", "/tmp/entrypoint.sh"]
