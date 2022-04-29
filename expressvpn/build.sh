@@ -83,33 +83,4 @@ fi
 tput sgr0
 echo ""
 
-echo "~> Delete testing container..."
-docker stop expressvpn-rc
-docker rm expressvpn-rc
-echo ""
-
-read -p "~> Test(s) seem(s) ok. Do you want to update registry with this image?" -n 1 -r
-echo ""
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
-    exit 0
-fi
-echo ""
-
-echo "~> Tag version to registry..."
-docker tag expressvpn:${tag} polkaned/expressvpn:${tag}
-echo ""
-
-echo "~> Tag lastest to registry..."
-docker tag expressvpn:${tag} polkaned/expressvpn
-echo ""
-
-# echo "~> Push to registry..."
-# docker push --all-tags polkaned/expressvpn
-# echo ""
-
-echo "~> Cleaning..."
-docker rmi polkaned/expressvpn:latest
-docker rmi polkaned/expressvpn:${tag}
-docker rmi expressvpn:${tag}
-echo ""
+read "~> Test(s) seem(s) ok."
