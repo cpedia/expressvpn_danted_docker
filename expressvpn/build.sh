@@ -53,7 +53,7 @@ docker run \
     --privileged \
     --detach=true \
     --tty=true \
-    --publish 1080:1080 \
+    --publish=1080:1080 \
     --name=expressvpn-rc \
     expressvpn:${tag} \
     /bin/bash
