@@ -14,7 +14,7 @@ ARG APP=expressvpn_3.21.0.2-1_amd64.deb
 COPY ${APP} /tmp/${APP}
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libterm-readkey-perl ca-certificates wget expect iproute2 curl procps libnm0 apt-utils dante-server \
+    libterm-readkey-perl ca-certificates wget expect iproute2 curl procps libnm0 apt-utils dante-server net-tools telnet\
     && rm -rf /var/lib/apt/lists/* \
     # && wget -q "https://github.com/cpedia/expressvpn_danted_docker/raw/master/expressvpn/Dockerfile/${APP}" -O /tmp/${APP} \
     && dpkg -i /tmp/${APP} \
