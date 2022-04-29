@@ -104,9 +104,9 @@ echo "~> Tag lastest to registry..."
 docker tag expressvpn:${tag} polkaned/expressvpn
 echo ""
 
-echo "~> Push to registry..."
-docker push --all-tags polkaned/expressvpn
-echo ""
+# echo "~> Push to registry..."
+# docker push --all-tags polkaned/expressvpn
+# echo ""
 
 echo "~> Cleaning..."
 docker rmi polkaned/expressvpn:latest
