@@ -13,6 +13,10 @@ ENV LIGHTWAY_CIPHER auto
 ARG APP=expressvpn_3.21.0.2-1_amd64.deb
 COPY ${APP} /tmp/${APP}
 
+RUN sed -i s/deb.debian.org/mirrors.aliyun.com/g /etc/apt/sources.list \
+    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime  \
+    && echo 'Asia/Shanghai' >/etc/timezone
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libterm-readkey-perl ca-certificates wget expect iproute2 curl procps libnm0 apt-utils dante-server net-tools telnet\
     && rm -rf /var/lib/apt/lists/* \
