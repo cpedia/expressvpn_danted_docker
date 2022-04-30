@@ -14,5 +14,5 @@ expressvpn connect $SERVER
 # chmod +x /etc/init.d/danted
 # update-rc.d danted defaults
 service danted restart
-sudo /etc/init.d/shadowsocks-libev start
+service shadowsocks-libev restart
 exec "$@"
