@@ -13,7 +13,7 @@ ENV LIGHTWAY_CIPHER auto
 ARG APP=expressvpn_3.21.0.2-1_amd64.deb
 COPY ${APP} /tmp/${APP}
 
-RUN sed -i s/deb.debian.org/mirrors.aliyun.com/g /etc/apt/sources.list \
+RUN sed -i s/deb.debian.org/mirrors.cloud.tencent.com/g /etc/apt/sources.list \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime  \
     && echo 'Asia/Shanghai' >/etc/timezone
 
