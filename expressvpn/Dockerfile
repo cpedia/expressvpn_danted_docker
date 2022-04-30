@@ -18,7 +18,8 @@ RUN sed -i s/deb.debian.org/mirrors.aliyun.com/g /etc/apt/sources.list \
     && echo 'Asia/Shanghai' >/etc/timezone
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libterm-readkey-perl ca-certificates wget expect iproute2 curl procps libnm0 apt-utils dante-server net-tools telnet\
+    libterm-readkey-perl ca-certificates wget expect iproute2 curl  \
+    procps libnm0 apt-utils dante-server net-tools telnet shadowsocks-libev \
     && rm -rf /var/lib/apt/lists/* \
     # && wget -q "https://github.com/cpedia/expressvpn_danted_docker/raw/master/expressvpn/Dockerfile/${APP}" -O /tmp/${APP} \
     && dpkg -i /tmp/${APP} \
@@ -29,5 +30,6 @@ COPY entrypoint.sh /tmp/entrypoint.sh
 COPY expressvpnActivate.sh /tmp/expressvpnActivate.sh
 # COPY danted_init /etc/init.d/danted
 COPY danted.conf /etc/danted.conf
+COPY shadowsocks.conf /etc/shadowsocks-libev/config.json
 
 ENTRYPOINT ["/bin/bash", "/tmp/entrypoint.sh"]
