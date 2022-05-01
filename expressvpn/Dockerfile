@@ -31,6 +31,7 @@ COPY entrypoint.sh /tmp/entrypoint.sh
 COPY expressvpnActivate.sh /tmp/expressvpnActivate.sh
 # COPY danted_init /etc/init.d/danted
 COPY danted.conf /etc/danted.conf
+COPY install_v2ray.sh /usr/bin/install_v2ray.sh
 # COPY shadowsocks.conf /etc/shadowsocks-libev/config.json
 
 ENTRYPOINT ["/bin/bash", "/tmp/entrypoint.sh"]
