@@ -19,8 +19,8 @@ RUN sed -i s/deb.debian.org/mirrors.cloud.tencent.com/g /etc/apt/sources.list \
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libterm-readkey-perl ca-certificates wget expect iproute2 curl  \
-    procps libnm0 apt-utils dante-server net-tools telnet  \
-    ## shadowsocks-libev \
+    procps libnm0 apt-utils dante-server net-tools telnet vim-enhanced  \
+    shadowsocks-libev \
     && rm -rf /var/lib/apt/lists/* \
     # && wget -q "https://github.com/cpedia/expressvpn_danted_docker/raw/master/expressvpn/Dockerfile/${APP}" -O /tmp/${APP} \
     && dpkg -i /tmp/${APP} \
