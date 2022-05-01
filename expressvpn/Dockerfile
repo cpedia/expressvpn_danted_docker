@@ -38,7 +38,7 @@ COPY shadowsocks.conf /etc/shadowsocks-libev/config.json
 
 ENTRYPOINT ["/bin/bash", "/tmp/entrypoint.sh"]
 
-EXPOSE 1080
-EXPOSE 1081
-EXPOSE 80
-EXPOSE 443
+#EXPOSE 1080
+#EXPOSE 1081
+#EXPOSE 80
+#EXPOSE 443
