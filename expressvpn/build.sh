@@ -54,6 +54,7 @@ docker run \
     --detach=true \
     --tty=true \
     --publish=1080:1080 \
+    --publish=1081:1081 \
     --publish=80:80 \
     --publish=443:443 \
     --name=expressvpn-rc \
