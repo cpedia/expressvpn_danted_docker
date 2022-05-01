@@ -53,7 +53,7 @@ docker run \
     --privileged \
     --detach=true \
     --tty=true \
-    --network host \
+    --network=host \
     --name=expressvpn-rc \
     expressvpn:${tag} \
     /bin/bash
