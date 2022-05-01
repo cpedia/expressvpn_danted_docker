@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /tmp/*.deb\
     && apt-get purge -y --auto-remove wget
 
-RUN apt-file update && apt-get install vim
+RUN apt-file update && apt-get -y --no-install-recommends install vim
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 COPY expressvpnActivate.sh /tmp/expressvpnActivate.sh
