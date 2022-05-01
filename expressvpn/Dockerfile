@@ -33,3 +33,6 @@ COPY danted.conf /etc/danted.conf
 COPY shadowsocks.conf /etc/shadowsocks-libev/config.json
 
 ENTRYPOINT ["/bin/bash", "/tmp/entrypoint.sh"]
+
+EXPOSE 1080
+EXPOSE 1081
