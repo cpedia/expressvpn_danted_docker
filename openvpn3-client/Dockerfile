@@ -30,6 +30,7 @@ RUN apt-file update && apt-get -y --no-install-recommends install vim
 
 COPY ov3-chenping.ovpn /etc/ov3-chenping.ovpn
 
+COPY entrypoint.sh /tmp/entrypoint.sh
 COPY danted.conf /etc/danted.conf
 
 ENTRYPOINT ["/bin/bash", "/tmp/entrypoint.sh"]
