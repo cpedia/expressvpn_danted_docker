@@ -11,7 +11,7 @@ RUN sed -i s/deb.debian.org/mirrors.cloud.tencent.com/g /etc/apt/sources.list \
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-transport-https ca-certificates \
-    curl software-properties-common
+    curl software-properties-common gpg-agent
 
 COPY openvpn-repo-pkg-key.pub /tmp/openvpn-repo-pkg-key.pub
 COPY openvpn3-focal.list /etc/apt/sources.list.d/openvpn3.list
