@@ -1,0 +1,2 @@
+# OpenVPN 3 Linux client - Ubuntu 20.04
+deb https://swupdate.openvpn.net/community/openvpn3/repos focal main
