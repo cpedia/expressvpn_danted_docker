@@ -10,7 +10,7 @@ ENV LOCATION smart
 ENV PREFERRED_PROTOCOL auto
 ENV LIGHTWAY_CIPHER auto
 
-ARG APP=expressvpn_3.21.0.2-1_amd64.deb
+ARG APP=expressvpn_3.30.0.2-1_amd64.deb
 COPY ${APP} /tmp/${APP}
 
 RUN sed -i s/deb.debian.org/mirrors.cloud.tencent.com/g /etc/apt/sources.list \
@@ -32,11 +32,8 @@ RUN apt-file update && apt-get -y --no-install-recommends install vim
 COPY entrypoint.sh /tmp/entrypoint.sh
 COPY expressvpnActivate.sh /tmp/expressvpnActivate.sh
 # COPY danted_init /etc/init.d/danted
-COPY danted.conf /etc/danted.conf
-COPY install_v2ray.sh /usr/bin/install_v2ray.sh
-COPY shadowsocks.conf /etc/shadowsocks-libev/config.json
+# COPY shadowsocks/danted.conf /etc/danted.conf
+# COPY install_v2ray.sh /usr/bin/install_v2ray.sh
+# COPY shadowsocks/shadowsocks.conf /etc/shadowsocks-libev/config.json
 
 ENTRYPOINT ["/bin/bash", "/tmp/entrypoint.sh"]
-
-EXPOSE 1080
-EXPOSE 1081

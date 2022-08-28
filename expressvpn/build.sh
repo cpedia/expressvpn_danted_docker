@@ -20,7 +20,7 @@ echo "${expressvpn_version}"
 echo ""
 
 echo "~> Get the container tag..."
-tag=${expressvpn_version}.${build_id}
+tag=${expressvpn_version}
 echo "${tag}"
 echo ""
 
@@ -53,8 +53,6 @@ docker run \
     --privileged \
     --detach=true \
     --tty=true \
-    --publish=1080:1080 \
-    --publish=1081:1081 \
     --name=expressvpn-rc \
     expressvpn:${tag} \
     /bin/bash
