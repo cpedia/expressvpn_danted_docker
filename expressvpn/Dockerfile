@@ -37,3 +37,5 @@ COPY expressvpnActivate.sh /tmp/expressvpnActivate.sh
 # COPY shadowsocks/shadowsocks.conf /etc/shadowsocks-libev/config.json
 
 ENTRYPOINT ["/bin/bash", "/tmp/entrypoint.sh"]
+
+EXPOSE 8388
