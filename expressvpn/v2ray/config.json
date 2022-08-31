@@ -48,7 +48,7 @@
                 "servers":
                 [
                     {
-                        "address": "10.0.4.7",
+                        "address": "expressvpn",
                         "port": 8388,
                         "method": "chacha20-ietf-poly1305",
                         "password": "syc@m0re"
